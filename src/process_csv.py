@@ -1,6 +1,6 @@
 import sys
 import csv
-from msds510.utils.util import transform_record
+from msds510.util import transform_record
 #Importing sys which contain command-line arguments passed to the script
 #Importing csv to use DictReader and DictWriter
 #Importing function transform_record to be used in this program
@@ -51,6 +51,9 @@ def main():
         dictionary = {}
         for field, value in zip(fieldnames, row.values()):
             dictionary[field] = value
+        # creating dictionary and using zip to map the similar index of multiple containers so that they
+        # can be used just using as single entity.
+
         records.append(transform_record(dictionary))
         # Running function transform_record on dictionary and appending result to records
 
